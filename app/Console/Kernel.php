@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('fetch:capsule all')->everyMinute();
+         $schedule->command('fetch:capsule all')->everyThreeMinutes();
     }
 
     /**
