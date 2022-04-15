@@ -13,5 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('test',[\App\Http\Controllers\CapsuleController::class,'getAll']);
-Route::get('test/{serialApi}',[\App\Http\Controllers\CapsuleController::class,'serialApi']);
+

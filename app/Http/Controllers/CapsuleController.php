@@ -66,12 +66,12 @@ class CapsuleController extends Controller
     /**
      * @OA\Get (
      *     tags={"capsules"},
-     *     path="/api/capsules/{serial}",
+     *     path="/api/capsules/{status}",
      *     security={{"Bearer":{}}},
      *     description="Öğrenim Bilgilerine Ulaşma",
      *      @OA\Parameter(
      *      name="status",
-     *      in="query",
+     *      in="path",
      *      required=true,
      *      @OA\Schema(
      *           type="string"

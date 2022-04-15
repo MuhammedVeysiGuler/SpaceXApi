@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test',[\App\Http\Controllers\CapsuleController::class,'index']);
+Route::get('capsules',[\App\Http\Controllers\CapsuleController::class,'getAll']);
+Route::get('capsules/{serialApi}',[\App\Http\Controllers\CapsuleController::class,'serialApi']);
