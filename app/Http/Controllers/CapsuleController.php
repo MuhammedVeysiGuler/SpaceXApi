@@ -55,11 +55,26 @@ class CapsuleController extends Controller
 
     public function getAll(Request $request){
         if (isset($request->status) && $request->status == "active"){
-            $activeCapsules = Capsules::where('status',$request->status)->get();
+            $activeCapsules = Capsules::where('status',$request->status)->with('missions')->get();
+            return response()->json($activeCapsules);
+        }
+        if (isset($request->status) && $request->status == "retired"){
+            $activeCapsules = Capsules::where('status',$request->status)->with('missions')->get();
+            return response()->json($activeCapsules);
+        }
+        if (isset($request->status) && $request->status == "unknown"){
+            $activeCapsules = Capsules::where('status',$request->status)->with('missions')->get();
+            return response()->json($activeCapsules);
+        }
+        if (isset($request->status) && $request->status == "etc"){
+            $activeCapsules = Capsules::where('status',$request->status)->with('missions')->get();
             return response()->json($activeCapsules);
         }
         $allCapsules = Capsules::with('missions')->get();
-        return response()->json($allCapsules);
+        return response()->json([
+            'error' => 'Geçerli bir status vermediğiniz için tüm veriler getiriliyor..',
+            "tüm kapsüller" =>$allCapsules,
+        ]);
     }
 
 
