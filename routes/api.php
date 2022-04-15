@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('capsules',[\App\Http\Controllers\CapsuleController::class,'getAll']);
-Route::get('capsules/{serialApi}',[\App\Http\Controllers\CapsuleController::class,'serialApi']);
+Route::post('login', [\App\Http\Controllers\Auth\PassportAuthController::class,'login'])->name('login');
+
+
+Route::middleware('auth:api')->group( function () {
+    Route::get('capsules',[\App\Http\Controllers\CapsuleController::class,'getAll']);
+    Route::get('capsules/{serialApi}',[\App\Http\Controllers\CapsuleController::class,'serialApi']);
+});

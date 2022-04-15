@@ -13,7 +13,7 @@ class CapsuleController extends Controller
      *     tags={"capsules"},
      *     path="/api/capsules/",
      *     security={{"Bearer":{}}},
-     *     description="Öğrenim Bilgilerine Ulaşma",
+     *     description="Status bilgisi verilenleri gösterir => status= active , retired , unknown , etc ",
      *      @OA\Parameter(
      *      name="status",
      *      in="query",
@@ -43,7 +43,7 @@ class CapsuleController extends Controller
      *     tags={"capsules"},
      *     path="/api/capsules",
      *     security={{"Bearer":{}}},
-     *     description="Öğrenim Bilgilerine Ulaşma",
+     *     description="Tüm Kapsülleri Gösterir",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
      *     @OA\Response(response="401", description="Unauthorized"),
@@ -66,11 +66,11 @@ class CapsuleController extends Controller
     /**
      * @OA\Get (
      *     tags={"capsules"},
-     *     path="/api/capsules/{status}",
+     *     path="/api/capsules/{serial_no}",
      *     security={{"Bearer":{}}},
-     *     description="Öğrenim Bilgilerine Ulaşma",
+     *     description="Serial numarası girilenin bilgilerini getirir.",
      *      @OA\Parameter(
-     *      name="status",
+     *      name="serial_no",
      *      in="path",
      *      required=true,
      *      @OA\Schema(

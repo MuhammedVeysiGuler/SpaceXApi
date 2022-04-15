@@ -13,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/test',function (){
+    return response()->json(['Giriş Yapılmalı']);
+})->name('giris_yap');
