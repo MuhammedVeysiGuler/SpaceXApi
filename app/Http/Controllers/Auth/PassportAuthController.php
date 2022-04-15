@@ -30,7 +30,11 @@ class PassportAuthController extends Controller
      *           type="string"
      *      )
      *      ),
-     *     @OA\Response(response="default", description="Alan")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Server Error"),
      *
      * )
      */
