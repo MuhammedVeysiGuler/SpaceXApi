@@ -13,7 +13,7 @@ class PassportAuthController extends Controller
      * @OA\Post  (
      *     tags={"login"},
      *     path="/api/login",
-     *     description="Akademisyen Bilgilerine Ulaşma",
+     *     description="Giriş",
      *      @OA\Parameter(
      *      name="email",
      *      in="query",
